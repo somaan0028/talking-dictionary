@@ -1,0 +1,66 @@
+<%- include('../partials/header.ejs'); %>
+
+    <div class="headings">
+        <h1>The Talking Dictionary</h1>
+        <p>Type a word, Hear the Meaning</p>
+    </div>
+    
+    <!-- <form method="post" action=<%= '/get-audio?cb='+ new Date().getTime() %> > -->
+
+    <form method="post" action=<%= '/get-meaning'%> >
+        <input type="text" name="theText" id="theTextInput" autocomplete="off" placeholder="Type a word here...">
+
+        <div class="custom-select" style="width:200px;">
+            <select id="voice" name="voice">
+              <option value="en-US_MichaelV3Voice">Select Voice</option>
+              <option value="en-GB_CharlotteV3Voice">Charlotte (UK)</option>
+              <option value="en-GB_JamesV3Voice">James (UK)</option>
+              <!-- <option value="en-GB_KateV3Voice">Kate (UK)</option> -->
+              <option value="en-US_AllisonV3Voice">Allison (USA)</option>
+              <!-- <option value="en-US_EmilyV3Voice">Emily (USA)</option>
+              <option value="en-US_HenryV3Voice">Henry (USA)</option>
+              <option value="en-US_KevinV3Voice">Kevin (USA)</option>
+              <option value="en-US_LisaV3Voice">Lisa (USA)</option> -->
+              <option value="en-US_MichaelV3Voice">Michael (USA)</option>
+              <!-- <option value="en-US_OliviaV3Voice">Olivia (USA)</option> -->
+            </select>
+        </div>
+
+        <button type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+    </form>
+    
+    <% if(audio){ %>
+        <div class="meaning-and-audio">
+            <h2><%= word %></h2>
+            <p><%= definition %></p>
+            <audio id="audio_element" controls autoplay preload="none">
+                <source src="audio/<%= filename %>" type="audio/mp3">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+    <% } %>
+
+    <% if(msgError){ %>
+        <div class="meaning-and-audio">
+
+            <p class="msg-error">Sorry! Could not find the meaning of <%= word %></p>
+        </div>
+    <% } %>
+
+    <% if(audioError){ %>
+        <div class="meaning-and-audio">
+            <h2><%= word %></h2>
+            <p><%= definition %></p>
+            
+            <p id="audio-error">Audio file can't be retrieved from the IBM Watson API. Probably my limit of free characters for this month has been reached. So sorry!</p>
+        </div>
+    <% } %>
+
+    
+
+
+    <p class="mention-apis">Made using the "IBM Watson Text-to-Speech" API<br>and the "Owlbot Dictionary" API</p>
+
+    <script src="js/drop-down-menu.js"></script>
+
+<%- include('../partials/footer.ejs'); %>

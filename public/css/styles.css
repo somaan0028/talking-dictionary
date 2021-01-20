@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
+*{
+    font-family: 'Dosis', sans-serif;
+}
+
+.headings{
+    margin-bottom: 20px;
+    /* transform: translateY(-60px); */
+    margin: 50px 0 50px 0;
+}
+  
+.headings h1{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+  
+.headings p{
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+  
+.ui-container{
+    /* background-color: #fc617c6e; */
+    background-image: linear-gradient(210deg, rgb(143 1 192 / 67%), rgb(141 195 232));
+}
+  
+.inner-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+  
+.inner-container form{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    flex-wrap:wrap;
+}
+
+
+.inner-container form #theTextInput,
+.inner-container form .custom-select .select-selected,
+.inner-container form button{
+    height: 60px;
+}
+
+
+  
+.inner-container form #theTextInput{
+    margin: 5px 5px 0 5px;
+    padding: 0 10px;
+    font-size: 20px;
+    background-color: #ff006d;
+    border: 3px solid #ff006d;
+    color: white;
+    box-shadow: 0 0 40px 12px #0000004f;
+    flex-grow: 3;
+    z-index: 5;
+}
+
+.inner-container form #theTextInput:focus{
+    outline: none;
+}
+  
+
+::-webkit-input-placeholder { /* Edge */
+    color: red;
+}
+
+:-ms-input-placeholder { /* Internet Explorer */
+    color: red;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+.inner-container form .custom-select{
+    max-width: 170px;
+    margin: 0 5px;
+}
+  
+.inner-container form button{
+    width: 60px;
+    padding: 10px 13px;
+    background-color: #ff006d;
+    border: 3px solid #ff006d;
+    font-size: 18px;
+    margin: 5px 5px 0 5px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 0 40px 12px #0000004f;
+    flex-grow: 1;
+}
+
+.meaning-and-audio{
+    margin: 30px 0 0 0;
+    padding: 20px 30px;
+    box-shadow: 0 0 100px #22222257;
+    background-color: whitesmoke;
+    width: 100%;
+    max-width: 800px;
+    min-height: 120px;
+
+}
+
+.meaning-and-audio h2{
+    color: #ff006d;
+    margin-bottom: 5px;
+}
+
+.meaning-and-audio p{
+    margin-bottom: 10px;
+}
+.meaning-and-audio audio{
+    box-shadow: 0 0 25px #ff006d7a;
+    margin-top: 20px;
+}
+
+
+.mention-apis{
+    margin: 90px 0 30px 0;
+    font-size: 23px;
+    text-align: center;
+    color: #ff006d;
+}
+
+.meaning-and-audio #audio-error{
+    margin-top: 30px;
+    color: red;
+    font-family: monospace;
+}

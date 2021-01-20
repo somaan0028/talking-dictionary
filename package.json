@@ -1,0 +1,28 @@
+{
+  "name": "talking-dictionary",
+  "version": "1.0.0",
+  "description": "Just type a word, pick a voice, and hear the meaning",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "ibm-watson": "^5.7.1",
+    "node-fetch": "^2.6.1"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://github.com/somaan0028/talking-dictionary"
+  },
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
